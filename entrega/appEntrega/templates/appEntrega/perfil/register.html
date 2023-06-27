@@ -1,0 +1,71 @@
+{% extends 'appEntrega/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Horarios
+{% endblock titulo %}
+
+{% block main %}
+
+<html lang="en">
+    <head>
+        <section class="page-section cta">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 mx-auto">
+                        <div class="cta-inner bg-faded text-center rounded">
+                            <h2 class="section-heading mb-5">
+                                <span class="section-heading-lower">Horarios</span>
+                            </h2>
+                            <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+                                <li class="list-unstyled-item list-hours-item d-flex">
+                                    Domingo
+                                    <span class="ms-auto">Cerrado</span>
+                                </li>
+                                <li class="list-unstyled-item list-hours-item d-flex">
+                                    Lunes
+                                    <span class="ms-auto">8:00 a 12:00 y 15:00 a 19:30</span>
+                                </li>
+                                <li class="list-unstyled-item list-hours-item d-flex">
+                                    Martes
+                                    <span class="ms-auto">8:00 a 12:00 y 15:00 a 19:30</span>
+                                </li>
+                                <li class="list-unstyled-item list-hours-item d-flex">
+                                    Miércoles
+                                    <span class="ms-auto">8:00 a 12:00 y 15:00 a 19:30</span>
+                                </li>
+                                <li class="list-unstyled-item list-hours-item d-flex">
+                                    Jueves
+                                    <span class="ms-auto">8:00 a 12:00 y 15:00 a 19:30</span>
+                                </li>
+                                <li class="list-unstyled-item list-hours-item d-flex">
+                                    Viernes
+                                    <span class="ms-auto">8:00 a 12:00 y 15:00 a 19:30</span>
+                                </li>
+                                <li class="list-unstyled-item list-hours-item d-flex">
+                                    Sábado
+                                    <span class="ms-auto">8:00 a 12:00</span>
+                                </li>
+                            </ul>
+                            <p class="address mb-5">
+                                <em>
+                                    <strong>Esperanza 123</strong>
+                                    <br />
+                                    Villa Esmeralda
+                                </em>
+                            </p>
+                            <p class="mb-0">
+                                <small><em>Telefono</em></small>
+                                <br />
+                                (317) 585-8468
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
+
+{% endblock main %}

@@ -1,0 +1,32 @@
+{% extends 'appEntrega/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Inicio
+{% endblock titulo %}
+
+{% block main %}
+
+<html lang="en">
+    <body>
+        <section class="page-section clearfix">
+            <div class="container">
+                <div class="intro">
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src='{% static "appEntrega/assets/img/intro.jpg" %}' alt="..." />
+                    <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper">Garantizamos el mejor servicio</span>
+                            <span class="section-heading-lower">CONFÍE EN NOSOTROS</span>
+                        </h2>
+                        <p class="mb-3">
+                            En nuestro taller mecánico, cada reparación comienza con un enfoque meticuloso y un equipo altamente calificado. Seleccionamos cuidadosamente las piezas y herramientas adecuadas para brindarle el mejor servicio posible. Somos una maravillosa adición a su vida diaria como propietario de un automóvil. ¡Lo garantizamos!</p>
+                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href='{% url "Horarios" %}'>Encontranos!</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
+
+{% endblock main %}

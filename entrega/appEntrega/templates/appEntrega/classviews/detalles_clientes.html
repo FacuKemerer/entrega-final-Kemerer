@@ -1,0 +1,47 @@
+{% extends 'appEntrega/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Cliente {{ cliente.apellido }}
+{% endblock titulo %}
+
+{% block main %}
+
+<html lang="en">
+
+<section id="scroll" class="font-size-clientes page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="mx-auto">
+                <div class="cta-inner bg-faded rounded">
+                    <h2 class="section-heading mb-5">
+                    <span class="section-heading-clientes">{{ cliente.apellido }} {{ cliente.nombre }}</span>
+                    </h2>
+                    <ul class="list-unstyled lista mb-5 text-left mx-auto">
+                        <li class="list-unstyled-item detalles-item d-flex">
+                            Telefono: {{ cliente.telefono }}
+                            <a class="ms-boton1 ms-botones font-botones" href="{% url 'Editar' cliente.id %}#scroll">Editar</a>
+                            <a class="ms-botones font-botones" href="{% url 'Borrar' cliente.id %}#scroll">Borrar</a>
+                            <a class="ms-botones font-botones" href="{% url 'Clientes' %}#scroll">Volver</a>
+                        </li>
+                        {% if autos %}
+                            Patentes:
+                            <br>
+                            {% for auto in autos %}
+                                {{ auto.patente }}
+                            <br>
+                            {% endfor %}
+                        {% else %}
+                            No se ha agregado ningún automóvil para este cliente.
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</html>
+
+{% endblock main %}

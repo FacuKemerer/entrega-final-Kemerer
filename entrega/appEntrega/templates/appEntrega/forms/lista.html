@@ -1,0 +1,30 @@
+{% extends 'appEntrega/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Búsquedas
+{% endblock titulo %}
+
+{% block main %}
+
+
+{% for resultado in resultados %}
+
+<div class="cta">
+    <div class="text">
+        <h2 class="text-weight">Información del auto:</h2>
+        <li class="section-heading-parrafo text-weight2">Patente: {{ resultado.auto.patente }}</li>
+        <li class="section-heading-parrafo text-weight2">Cliente: {{ resultado.cliente.nombre }} {{ resultado.cliente.apellido }}</li>
+        
+        <h2 class="text-weight">Historial de trabajos:</h2>
+        {% for trabajo in resultado.trabajos %}
+        <li class="section-heading-parrafo text-weight2">Descripción: {{ trabajo.descripcion }}</li>
+        <li class="section-heading-parrafo text-weight2">Fecha: {{ trabajo.fecha }}</li>
+
+    {% endfor %}
+{% endfor %}
+    </div>
+</div>
+
+{% endblock main %}

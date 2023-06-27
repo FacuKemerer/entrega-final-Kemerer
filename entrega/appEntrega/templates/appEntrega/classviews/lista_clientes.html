@@ -1,0 +1,37 @@
+{% extends 'appEntrega/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Clientes
+{% endblock titulo %}
+
+{% block main %}
+
+<html lang="en">
+    <head>
+        <section id="scroll" class="font-size-clientes page-section cta">
+            <div class="container">
+                <div class="row">
+                    <div class="mx-auto">
+                        <div class="cta-inner bg-faded rounded">
+                            <h2 class="section-heading mb-5">
+                                <span class="section-heading-clientes">Clientes</span>
+                            </h2>
+                            <ul class="list-unstyled lista mb-5 text-left mx-auto">
+                                {% for cliente in object_list%}
+                                <li class="list-unstyled-item lista-clientes-item d-flex">
+                                    {{ cliente.apellido }} {{ cliente.nombre }}
+                                    <a class="ms-boton1 ms-botones font-botones" href="{% url 'Detalles' cliente.id %}#scroll">Ver más</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
+
+{% endblock main %}

@@ -1,0 +1,29 @@
+{% extends 'appEntrega/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Agragar historial
+{% endblock titulo %}
+
+{% block main %}
+<a id="scroll"></a>
+<div class="site-heading text-center text-faded d-none d-lg-block">
+    <span class="site-heading-upper texto-form mb-3">Buscar Autos</span>
+    <div class="cuadrado">
+        <form class="formulario" action="" method="POST">
+            {% csrf_token %}
+            <br>
+            <table>
+
+                {{ form.as_p }}
+
+            </table>
+
+                <input class="Boton" type = "submit" value="Buscar">
+            <br>
+        </form>
+    </div>
+</div>
+
+{% endblock main %}
