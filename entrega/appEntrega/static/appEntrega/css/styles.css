@@ -11097,6 +11097,7 @@ p {
 }
 .font-botones{
   font-size: 16px;
+  color: #000;
 }
 .detalles-item {
   border-bottom: 1px solid rgba(230, 167, 86, 0.5);
@@ -11137,24 +11138,19 @@ p {
   border-radius: 8px;
 }
 
-
-.formulario2 {
+.formulario-register {
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-.formulario2 input {
+.formulario-register input {
   width: 90%;
   height: 30px;
   margin: 0.5rem;
 }
 
-.formulario2 button {
+.formulario-register button {
   padding: 0.5em 1em;
   border: none;
   background: rgb(100, 200, 255);
