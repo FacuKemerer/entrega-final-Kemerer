@@ -20,7 +20,8 @@ Cliente {{ cliente.apellido }}
                     </h2>
                     <ul class="list-unstyled lista mb-5 text-left mx-auto">
                         <li class="list-unstyled-item d-flex">
-                            <form class="medio text-center" method="POST">{% csrf_token %}
+                            <form class="formulario2 text-center" method="POST">
+                            {% csrf_token %}
                             {{ form.as_p }}
                             <input class="Boton" type = "submit" value="Guardar">
                             </form>

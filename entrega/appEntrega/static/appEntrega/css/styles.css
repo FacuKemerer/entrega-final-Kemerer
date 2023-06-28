@@ -11118,3 +11118,45 @@ p {
   margin-right: auto;
   margin-left: auto;
 }
+
+.contraseña-incorrecta{
+  font-family: "Raleway";
+  font-weight: 600;
+  background-color: #242424;
+  background-size: auto;
+  color:#f00;
+  border-radius: 8px;
+}
+
+.contraseña-correcta{
+  font-family: "Raleway";
+  font-weight: 600;
+  background-color: rgb(76 76 76 / 60%);
+  background-size: auto;
+  color: #00c5d9;
+  border-radius: 8px;
+}
+
+
+.formulario2 {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulario2 input {
+  width: 90%;
+  height: 30px;
+  margin: 0.5rem;
+}
+
+.formulario2 button {
+  padding: 0.5em 1em;
+  border: none;
+  background: rgb(100, 200, 255);
+  cursor: pointer;
+}

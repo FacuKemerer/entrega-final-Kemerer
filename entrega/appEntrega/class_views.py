@@ -39,7 +39,6 @@ class EditarCliente(UpdateView):
     template_name = "appEntrega/classviews/editar_cliente.html"
 
 
-
 # Autos
 
 class DetalleAuto(DetailView):

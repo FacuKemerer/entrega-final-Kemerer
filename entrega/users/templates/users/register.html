@@ -1,0 +1,36 @@
+{% extends 'appEntrega/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Inicio de sesión
+{% endblock titulo %}
+
+{% block main %}
+
+<html lang="en">
+    <head>
+        <section class="page-section cta">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 mx-auto">
+                        <div class="cta-inner bg-faded text-center rounded">
+                            <h2 class="section-heading mb-5">
+                                <span class="section-heading-lower">Registrarse</span>
+                            </h2>
+                            <form class="formulario2" action="" method="POST">
+                                
+                            {% csrf_token %}
+                                
+                            {{ form.as_p }}
+                            <input class="Boton" type="submit" value="Registrarse">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
+
+{% endblock main %}

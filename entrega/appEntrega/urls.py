@@ -27,6 +27,9 @@ urlpatterns = [
     path('form-cliente/', views.agregar_cliente, name="AgregarCliente"),
     path('form-auto/', views.agregar_auto, name="AgregarAuto"),
     path('busqueda/', views.busqueda_auto, name="Busqueda"),
+    # path('registrarse/', views.sign_up, name="Registrarse"),
+    # path('cerrar-sesion', views.sign_out, name="CerrarSesion"),
+    # path('', views., name=""),
 ]
 
 urlpatterns += [

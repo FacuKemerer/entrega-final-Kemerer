@@ -2,6 +2,9 @@ from django.shortcuts import render
 from .forms import cliente_form, auto_form, historia_form, buscar_auto
 from .models import Cliente, Auto, HistorialTrabajos
 
+
+# Templates
+
 def inicio(request):
     return render(request, "appEntrega/index.html")
 
@@ -10,6 +13,9 @@ def trabajos(request):
 
 def horarios(request):
     return render(request, "appEntrega/horarios.html")
+
+
+# Formularios
 
 def agregar_cliente(request):
     if request.method == "POST":
@@ -73,3 +79,5 @@ def busqueda_auto(request):
     else:
         form = buscar_auto()
     return render(request, 'appEntrega/forms/buscar_form.html', {'form': form})
+
+
