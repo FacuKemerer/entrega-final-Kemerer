@@ -1,0 +1,35 @@
+{% extends 'appEntrega/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Confirmacion
+{% endblock titulo %}
+
+{% block main %}
+
+<html lang="en">
+    <head>
+        <section class="page-section cta">
+            <div class="container">
+                <div class="row">
+                    <div class="mx-auto">
+                        <div class="cta-inner bg-faded text-center rounded">
+                            <form id="scroll" method="post">{% csrf_token %}
+                                <ul class="list-unstyled list-hours mx-auto">
+                                    <li class="list-hours-item mb-0"></li>
+                                    <pr class="text-upper">¿Seguro que quieres borrar el auto del cliente {{ object }}?</pr>
+                                    <br>
+                                    <input class="Boton" type="submit" value="Borrar"/>
+                                    <li class="list-hours-item"></li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
+
+{% endblock main %}

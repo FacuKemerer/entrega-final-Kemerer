@@ -13,7 +13,7 @@ class Auto(models.Model):
     patente = models.TextField(max_length=7)
 
     def __str__(self):
-        return f"Cliente: {self.cliente} - Patente: {self.patente}"
+        return f"{self.cliente} - Patente: {self.patente}"
 
 class HistorialTrabajos(models.Model):
     auto = models.ForeignKey(Auto, on_delete=models.CASCADE, null=False)
@@ -21,5 +21,5 @@ class HistorialTrabajos(models.Model):
     fecha = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.auto}"
+        return f"{self.auto} del {self.fecha}"
 

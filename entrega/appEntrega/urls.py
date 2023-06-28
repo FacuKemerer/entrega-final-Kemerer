@@ -34,7 +34,8 @@ urlpatterns += [
     path('detalles/<pk>', class_views.DetalleCliente.as_view(), name="Detalles"),
     path('borrar-cliente/<pk>', class_views.BorrarCliente.as_view(), name="Borrar"),
     path('editar/<pk>', class_views.EditarCliente.as_view() , name="Editar"),
-    # path('', class_views. , name=""),
-    # path('', class_views. , name=""),
+    path('detalles-autos/<pk>', class_views.DetalleAuto.as_view() , name="DetalleAuto"),
+    path('borrar-auto/<pk>', class_views.BorrarAuto.as_view() , name="BorrarAuto"),
+    path('borrar-historial/<pk>', class_views.BorrarHistorial.as_view() , name="BorrarHistorial"),
     # path('', class_views. , name=""),
 ]

@@ -1,0 +1,50 @@
+{% extends 'appEntrega/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Cliente {{ cliente.apellido }}
+{% endblock titulo %}
+
+{% block main %}
+
+<html lang="en">
+
+<section id="scroll" class="font-size-clientes page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="mx-auto">
+                <div class="cta-inner bg-faded rounded">
+                    <h2 class="section-heading mb-5">
+                    <span class="section-heading-clientes">{{ cliente.nombre }} {{ cliente.apellido }}</span>
+                    </h2>
+                    <ul class="list-unstyled lista mb-5 text-left mx-auto">
+                        <li class="list-unstyled-item detalles-item d-flex">
+                            Patente: {{ auto.patente }}
+                            <a class="ms-boton1 ms-botones font-botones" href="{% url 'BorrarAuto' auto.id %}#scroll">Borrar</a>
+                            <a class="ms-botones font-botones" href="{% url 'Clientes' %}#scroll">Volver</a>
+                        </li>
+                        {% if historial %}
+                            Historial:
+                            <br>
+                            <li>
+                            {% for historial in historial %}
+                                {{ historial.descripcion }}
+                                <br>
+                                {{ historial.fecha }}
+                                <a class="ms-boton1 ms-botones font-botones" href="{% url 'BorrarHistorial' historial.id %}#scroll">Borrar</a>
+                            </li>
+                            {% endfor %}
+                        {% else %}
+                            No se ha agregado ningún historial para este auto.
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</html>
+
+{% endblock main %}
