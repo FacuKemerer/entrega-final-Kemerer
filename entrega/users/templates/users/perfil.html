@@ -1,0 +1,45 @@
+{% extends 'appEntrega/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Clientes
+{% endblock titulo %}
+
+{% block main %}
+
+<html lang="en">
+    <head>
+        <section id="scroll" class="font-size-clientes page-section cta">
+            <div class="container">
+                <div class="row">
+                    <div class="">
+                        <div class="cta-inner bg-faded rounded">
+                            <div class="">
+                                <head>
+                                    <link rel="stylesheet" type="text/css" href="styles.css">
+                                </head>
+                                <body class="perfil">
+                                    <h1 class="user-title text-center">Mi perfil</h1>
+                                    <div class="align-perfil user-profile">
+                                        <img class="user-avatar" src="{{ url }}">
+                                        <div class="user-info">
+                                            <p class="user-weight">{{ user.username }}</p>
+                                            <p>{{ user.email }}</p>
+                                            <p>{{ user.first_name }} {{ user.last_name }}</p>
+                                            <a class="" href='{% url "EditarUsuario" %}#scroll'>
+                                                <button class="boton-editar">Editar Perfil</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </body>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
+
+{% endblock main %}

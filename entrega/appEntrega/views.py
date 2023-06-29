@@ -1,7 +1,14 @@
 from django.shortcuts import render
 from .forms import cliente_form, auto_form, historia_form, buscar_auto
 from .models import Cliente, Auto, HistorialTrabajos
+from django.contrib.auth.decorators import user_passes_test
 
+
+def es_admin(user):
+    return user.is_authenticated and user.is_superuser
+
+def es_staff(user):
+    return user.is_authenticated and user.is_staff
 
 # Templates
 
@@ -17,6 +24,7 @@ def horarios(request):
 
 # Formularios
 
+@user_passes_test(es_staff)
 def agregar_cliente(request):
     if request.method == "POST":
         miFormulario = cliente_form(request.POST)
@@ -32,6 +40,7 @@ def agregar_cliente(request):
         miFormulario = cliente_form()
     return render(request, "appEntrega/forms/form_cliente.html", {"miFormulario": miFormulario})
 
+@user_passes_test(es_staff)
 def agregar_auto(request):
     if request.method == "POST":
         formulario = auto_form(request.POST)
@@ -49,6 +58,7 @@ def agregar_auto(request):
         formulario = auto_form()
     return render(request, "appEntrega/forms/form_auto.html", {"formulario": formulario})
 
+@user_passes_test(es_staff)
 def agregar_historia(request):
     if request.method == "POST":
         form_hist = historia_form(request.POST)
@@ -64,6 +74,7 @@ def agregar_historia(request):
         form_hist = historia_form()
     return render(request, "appEntrega/forms/form_hist.html", {"form_hist": form_hist})
 
+@user_passes_test(es_staff)
 def busqueda_auto(request):
     if request.method == 'POST':
         form = buscar_auto(request.POST)

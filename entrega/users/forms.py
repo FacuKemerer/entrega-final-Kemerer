@@ -10,6 +10,19 @@ class UserRegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ["username", "email", "password1", "password2"]
-        # Si queremos EDIAR los mensajes de ayuda editamos este dict,
-            # de lo contrario lo limpiamos de ésta forma.
         help_texts = {k: "" for k in fields}
+
+class UserEditForm(UserCreationForm):
+    pass
+
+class UserEditForm(UserCreationForm):
+    email = forms.EmailField(label="Ingrese su email:")
+    password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
+    password2 = forms.CharField(
+        label='Repita la contraseña', widget=forms.PasswordInput)
+    last_name = forms.CharField(label="Apellido:")
+    first_name = forms.CharField(label="Nombre:")
+    class Meta:
+        model = User
+        fields = ['email', 'password1', 'password2', 'last_name', 'first_name']
+        help_texts = {k:"" for k in fields}

@@ -11156,3 +11156,69 @@ p {
   background: rgb(100, 200, 255);
   cursor: pointer;
 }
+
+.edit-perfil{
+  font-family: 'Raleway';
+  font-style: italic;
+}
+
+.avatar{
+  border-radius: 50%;
+}
+
+
+.perfil{
+  font-family: 'Raleway';
+  font-weight: 300;
+}
+
+.align-perfil{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+}
+
+.user-title{
+  color: #000;
+}
+
+.user-weight{
+  font-size: 30px;
+  font-weight: 550;
+}
+
+.user-profile{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.user-avatar{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin-right: 20px;
+  color: #000;
+}
+
+.user-info{
+  font-size: 18px;
+  color: #000;
+}
+
+.boton-editar{
+  font-family: "Raleway";
+  font-weight: 600;
+  background-color: #fff;
+  box-shadow: #0dcaf0;
+  border-style: none;
+  color:#000;
+  border-radius: 8px;
+}
+
+.centered-link-profile {
+  text-align: center;
+  font-size: 24px;
+}
