@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, authenticate
-from .forms import UserRegisterForm, UserEditForm
 from django.contrib.auth.decorators import login_required
+from .forms import UserRegisterForm, MyUserEditForm
 from .models import Avatar
+from django.contrib.auth.models import User
+
 
 def login_request(request):
     if request.method == 'POST':
@@ -20,7 +22,6 @@ def login_request(request):
     form = AuthenticationForm()
     return render(request, "users/login.html", {"form": form})
 
-
 def register(request):
     if request.method == 'POST':
             form = UserRegisterForm(request.POST)
@@ -32,32 +33,39 @@ def register(request):
             form = UserRegisterForm()     
     return render(request,"users/register.html",  {"form":form})
 
-
 @login_required
 def edit_user(request):
     usuario = request.user
     if request.method == 'POST':
-        form = UserEditForm(request.POST)
+        form = MyUserEditForm(request.POST, request.FILES)
         if form.is_valid():
             informacion = form.cleaned_data
             usuario.email = informacion['email']
-            usuario.password1 = informacion['password1']
-            usuario.password2 = informacion['password2']
             usuario.last_name = informacion['last_name']
             usuario.first_name = informacion['first_name']
             usuario.save()
-            return render(request, "appEntrega/forms/confirmacion.html")
+            try:
+                avatar = Avatar.objects.get(user=usuario)
+                avatar_file_name = avatar.avatar.name  # Guardar el nombre de archivo del avatar anterior
+            except Avatar.DoesNotExist:
+                avatar = Avatar(user=usuario)
+                avatar_file_name = None
+            avatar_file = request.FILES.get('avatar')
+            if avatar_file:
+                avatar.avatar = avatar_file
+                if avatar_file_name and avatar_file_name != avatar.avatar.name:
+                    avatar.avatar.storage.delete(avatar_file_name)
+            avatar.save()
+            return render(request, "appEntrega/index.html")
     else:
-        form = UserEditForm(initial={'email': usuario.email})
+        form = MyUserEditForm(initial={'email': usuario.email, 'last_name': usuario.last_name, 'first_name': usuario.first_name})
     return render(request, "users/editar_perfil.html", {"form": form, "usuario": usuario})
 
 @login_required
 def perfil(request):
     avatares = Avatar.objects.filter(user=request.user.id)
-
     default_url = r'/media/avatares/Avatar.png'
     url = default_url
     if avatares:
         url = avatares[0].avatar.url
-
     return render(request, "users/perfil.html", {"url": url})

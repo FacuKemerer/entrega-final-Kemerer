@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block titulo %}
-Clientes
+Perfil
 {% endblock titulo %}
 
 {% block main %}
@@ -29,6 +29,9 @@ Clientes
                                             <p>{{ user.first_name }} {{ user.last_name }}</p>
                                             <a class="" href='{% url "EditarUsuario" %}#scroll'>
                                                 <button class="boton-editar">Editar Perfil</button>
+                                            </a>
+                                            <a href="{% url 'BorrarPerfil' user.id %}#scroll">
+                                            <button class="boton-editar">Borrar</button>
                                             </a>
                                         </div>
                                     </div>

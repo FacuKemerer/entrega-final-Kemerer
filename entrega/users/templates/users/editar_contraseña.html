@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block titulo %}
-Editar perfil de {{ user.username }}
+Editar contraseña de {{ user.username }}
 {% endblock titulo %}
 
 {% block main %}
@@ -20,18 +20,15 @@ Editar perfil de {{ user.username }}
                             </h2>
                             <ul class="edit-perfil list-unstyled lista mb-5 text-left mx-auto">
                                 <li class="list-unstyled-item lista-clientes-item d-flex">
-                                    <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
-                                        <p class="ext-center">Editar perfil</p>
+                                    <form id="scroll" action="" method="POST">{% csrf_token %}
+                                        <p class="ext-center">Editar contraseña</p>
                                         <table id="#scroll">
                                         {{ form.as_table }}
                                         </table>
                                         
-                                        <input class="boton-editar" type="submit", value="Guardar">
+                                        <input type="submit", value="Guardar">
                                     </form>
                                 </li>
-                                <a href="{% url 'EditarContraseña' %}#scroll">
-                                <input class="boton-editar" type="submit" value="Cambiar contraseña">
-                                </a>
                             </ul>
                         </div>
                     </div>

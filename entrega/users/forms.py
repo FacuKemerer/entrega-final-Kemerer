@@ -12,17 +12,17 @@ class UserRegisterForm(UserCreationForm):
         fields = ["username", "email", "password1", "password2"]
         help_texts = {k: "" for k in fields}
 
-class UserEditForm(UserCreationForm):
-    pass
+class CambiarPasswordForm(forms.Form):
+    password1 = forms.CharField(label="Cambiar contraseña", widget=forms.PasswordInput())
+    password2 = forms.CharField(label="Repetir contraseña", widget=forms.PasswordInput())
 
-class UserEditForm(UserCreationForm):
+
+class MyUserEditForm(forms.Form):
     email = forms.EmailField(label="Ingrese su email:")
-    password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
-    password2 = forms.CharField(
-        label='Repita la contraseña', widget=forms.PasswordInput)
     last_name = forms.CharField(label="Apellido:")
     first_name = forms.CharField(label="Nombre:")
+    avatar = forms.ImageField(required=False)
+
     class Meta:
         model = User
-        fields = ['email', 'password1', 'password2', 'last_name', 'first_name']
-        help_texts = {k:"" for k in fields}
+        fields = ['email', 'last_name', 'first_name', 'avatar']
