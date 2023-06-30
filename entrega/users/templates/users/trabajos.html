@@ -1,0 +1,36 @@
+{% extends 'appEntrega/base.html' %}
+
+{% load static %}
+{% load custom_filters %}
+
+{% block titulo %}
+Trabajos
+{% endblock titulo %}
+
+{% block main %}
+
+<html lang="en">
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item-title d-flex">
+                    <div class="bg-faded p-5 d-flex rounded"> 
+                        <h2 class="mb-0"> 
+                            <span class="section-heading-upper">¡Bienvenido a nuestro taller mecánico de confianza!</span>
+                            {% for post in posts %}
+                            <div>
+                                <div class="">{{ post.content }}</div>
+                                <i></i>
+                                <time data-time="#">{{ post.timestamp|formato_tiempo }}</time>
+                                <h2 class="">{{ post.user.username }}</h2>
+                                <br>
+                            </div>
+                            {% endfor %}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
+
+{% endblock main %}

@@ -1,0 +1,44 @@
+{% extends 'appEntrega/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Editar perfil de {{ user.username }}
+{% endblock titulo %}
+
+{% block main %}
+
+<html lang="en">
+    <head>
+        <section id="scroll" class="font-size-clientes page-section cta">
+            <div class="container">
+                <div class="row">
+                    <div class="mx-auto">
+                        <div class="cta-inner bg-faded rounded">
+                            <h2 class="section-heading mb-5">
+                                <span class="section-heading-clientes">{{ usuario }}</span>
+                            </h2>
+                            <ul class="edit-perfil list-unstyled lista mb-5 text-left mx-auto">
+                                <li class="list-unstyled-item lista-clientes-item d-flex">
+                                    <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+                                        <p class="ext-center">Editar perfil</p>
+                                        <table id="#scroll">
+                                        {{ form.as_p }}
+                                        </table>
+                                        
+                                        <input class="boton-editar" type="submit", value="Guardar">
+                                    </form>
+                                </li>
+                                <a href="{% url 'EditarContraseña' %}#scroll">
+                                <input class="boton-editar" type="submit" value="Cambiar contraseña">
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
+
+{% endblock main %}

@@ -1,10 +1,11 @@
-from django.shortcuts import render
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.shortcuts import render, get_object_or_404, redirect
+from .forms import UserRegisterForm, EditarUser, PostForm
+from .models import Avatar, Post
+from django.contrib import messages
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm, MyUserEditForm
-from .models import Avatar
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 
 def login_request(request):
@@ -37,7 +38,7 @@ def register(request):
 def edit_user(request):
     usuario = request.user
     if request.method == 'POST':
-        form = MyUserEditForm(request.POST, request.FILES)
+        form = EditarUser(request.POST, request.FILES)
         if form.is_valid():
             informacion = form.cleaned_data
             usuario.email = informacion['email']
@@ -58,7 +59,7 @@ def edit_user(request):
             avatar.save()
             return render(request, "appEntrega/index.html")
     else:
-        form = MyUserEditForm(initial={'email': usuario.email, 'last_name': usuario.last_name, 'first_name': usuario.first_name})
+        form = EditarUser(initial={'email': usuario.email, 'last_name': usuario.last_name, 'first_name': usuario.first_name})
     return render(request, "users/editar_perfil.html", {"form": form, "usuario": usuario})
 
 @login_required
@@ -69,3 +70,23 @@ def perfil(request):
     if avatares:
         url = avatares[0].avatar.url
     return render(request, "users/perfil.html", {"url": url})
+
+def post(request):
+	current_user = get_object_or_404(User, pk=request.user.pk)
+	if request.method == 'POST':
+		form = PostForm(request.POST)
+		if form.is_valid():
+			post = form.save(commit=False)
+			post.user = current_user
+			post.save()
+			messages.success(request, 'Post enviado')
+			return redirect('Trabajos')
+	else:
+		form = PostForm()
+	return render(request, 'users/publicar.html', {'form' : form })
+
+def trabajos(request):
+	posts = Post.objects.all()
+
+	context = { 'posts': posts}
+	return render(request, 'users/Trabajos.html', context)

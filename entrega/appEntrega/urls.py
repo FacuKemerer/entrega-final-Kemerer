@@ -22,7 +22,6 @@ from appEntrega import class_views
 urlpatterns = [
     path('', views.inicio, name="Inicio"),
     path('horarios/', views.horarios, name="Horarios"),
-    path('trabajos/', views.trabajos, name="Trabajos"),
     path('form-hist/', views.agregar_historia, name="AgregarHistorial"),
     path('form-cliente/', views.agregar_cliente, name="AgregarCliente"),
     path('form-auto/', views.agregar_auto, name="AgregarAuto"),

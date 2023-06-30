@@ -14,6 +14,8 @@ urlpatterns = [
     path('perfil/', views.perfil, name='Perfil'),
     path('borrar-perfil/<pk>', class_views.BorrarPerfil.as_view() , name='BorrarPerfil'),
     path('cambiar-contraseña/', class_views.CambiarPasswordView.as_view(), name='EditarContraseña'),
+    path('trabajos/', views.trabajos, name='Trabajos'),
+    path('publicar/', views.post, name='Publicar'),
 
 ]
 

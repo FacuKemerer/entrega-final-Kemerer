@@ -15,9 +15,6 @@ def es_staff(user):
 def inicio(request):
     return render(request, "appEntrega/index.html")
 
-def trabajos(request):
-    return render(request, "appEntrega/trabajos.html")
-
 def horarios(request):
     return render(request, "appEntrega/horarios.html")
 
