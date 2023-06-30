@@ -10,12 +10,14 @@ class Avatar(models.Model):
         return f"{self.user} - {self.avatar}"
 
 class Post(models.Model):
-	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
-	timestamp = models.DateTimeField(default=timezone.now)
-	content = models.TextField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
+    timestamp = models.DateTimeField(default=timezone.now)
+    content = models.TextField()
+    title = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='post_images', blank=True, null=True)
 
-	class Meta:
-		ordering = ['-timestamp']
+    class Meta:
+        ordering = ['-timestamp']
 
-	def __str__(self):
-		return f'{self.user.username}: {self.content}'
+    def __str__(self):
+        return f'{self.user.username}: {self.content}'

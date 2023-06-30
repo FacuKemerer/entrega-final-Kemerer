@@ -28,8 +28,14 @@ class EditarUser(forms.Form):
         fields = ['email', 'last_name', 'first_name', 'avatar']
 
 class PostForm(forms.ModelForm):
-	content = forms.CharField(label='', widget=forms.Textarea(attrs={'rows':2, 'placeholder': '¿Qué está pasando?'}), required=True)
+    title = forms.CharField(label='Título', required=True)
+    content = forms.CharField(
+        label='Contenido',
+        widget=forms.Textarea(attrs={'rows': 2, 'placeholder': '¿Qué has realizado?'}),
+        required=True
+    )
+    image = forms.ImageField(label='Imagen', required=False)
 
-	class Meta:
-		model = Post
-		fields = ['content']
+    class Meta:
+        model = Post
+        fields = ['title', 'content', 'image']

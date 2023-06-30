@@ -12,21 +12,25 @@ Trabajos
 <html lang="en">
         <section class="page-section">
             <div class="container">
-                <div class="product-item-title d-flex">
-                    <div class="bg-faded p-5 d-flex rounded"> 
-                        <h2 class="mb-0"> 
-                            <span class="section-heading-upper">¡Bienvenido a nuestro taller mecánico de confianza!</span>
-                            {% for post in posts %}
-                            <div>
-                                <div class="">{{ post.content }}</div>
-                                <i></i>
-                                <time data-time="#">{{ post.timestamp|formato_tiempo }}</time>
-                                <h2 class="">{{ post.user.username }}</h2>
-                                <br>
-                            </div>
-                            {% endfor %}
-                        </h2>
+                <div class="product-item-title">
+                    {% if user.is_staff %}
+                    <div class="boton-container">
+                    <a class="post-boton" href="{% url 'Publicar' %}#scroll">Nueva publicacion</a>
                     </div>
+                    {% endif %}
+                    {% for post in posts %}
+                    <div class="margen-post bg-faded p-5">
+                        <h2 class="post-titulo">{{ post.title }}</h2>
+                        <img class="post-imagen" src="{{ post.image.url }}" alt="Imagen del post">
+                        <div class="post-contenido">{{ post.content }}</div>
+                        <i></i>
+                        <p class="post-fecha">
+                            <time data-time="#">{{ post.timestamp|formato_tiempo }}</time>
+                        </p>
+                        <h2 class="post-user">{{ post.user.username }}</h2>
+                        <br>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>

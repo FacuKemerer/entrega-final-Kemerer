@@ -11222,3 +11222,68 @@ p {
   text-align: center;
   font-size: 24px;
 }
+
+/* Post */
+
+.margen-post{
+  border-bottom: 1px solid #7a7a7a;
+  border-radius: 5px;
+}
+
+.post-titulo{
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
+  text-align: justify;
+  margin-top: 10px;
+}
+
+.post-imagen{
+  border-radius: 1%;
+  display: block;
+  margin: auto;
+  color: #000;
+  max-width: 50%;
+  height: 80%; 
+}
+
+.post-contenido{
+  max-width: 100%;
+  height: auto;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.post-fecha{
+  font-style: italic;
+  color: #575757;
+  font-size: 15px;
+  text-align: right;
+  margin-top: 10px;
+  margin-bottom: 1px;
+}
+
+.post-user {
+  font-weight: bold;
+  color: #0D0B3A;
+  text-align: right;
+  font-size: 15px;
+
+}
+
+.boton-container{
+  text-align: right;
+}
+
+.post-boton{
+  font-family: "Raleway";
+  display: inline-block;
+  padding: 5px 10px;
+  text-decoration: none;
+  background-color: #eaeaea;
+  color: #333;
+  border: 1px solid #7a7a7a;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}

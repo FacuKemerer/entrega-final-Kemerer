@@ -21,7 +21,7 @@ Editar perfil de {{ user.username }}
                             <ul class="edit-perfil list-unstyled lista mb-5 text-left mx-auto">
                                 <li class="list-unstyled-item lista-clientes-item d-flex">
                                     <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
-                                        <p class="ext-center">Editar perfil</p>
+                                        <p>Editar perfil</p>
                                         <table id="#scroll">
                                         {{ form.as_table }}
                                         </table>

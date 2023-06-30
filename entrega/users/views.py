@@ -71,22 +71,35 @@ def perfil(request):
         url = avatares[0].avatar.url
     return render(request, "users/perfil.html", {"url": url})
 
+def mostrar_imagen_post(post):
+    url = post.image.url if post.image else None
+    return url
+
 def post(request):
-	current_user = get_object_or_404(User, pk=request.user.pk)
-	if request.method == 'POST':
-		form = PostForm(request.POST)
-		if form.is_valid():
-			post = form.save(commit=False)
-			post.user = current_user
-			post.save()
-			messages.success(request, 'Post enviado')
-			return redirect('Trabajos')
-	else:
-		form = PostForm()
-	return render(request, 'users/publicar.html', {'form' : form })
+    current_user = get_object_or_404(User, pk=request.user.pk)
+    
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = current_user
+            post.title = form.cleaned_data['title']
+            post.image = form.cleaned_data['image']
+            post.save()
+            messages.success(request, 'Post enviado')
+            return redirect('Trabajos')
+    else:
+        form = PostForm()
+    
+    context = {
+        'form': form,
+    }
+    
+    return render(request, 'users/publicar.html', context)
+
+
 
 def trabajos(request):
-	posts = Post.objects.all()
-
-	context = { 'posts': posts}
-	return render(request, 'users/Trabajos.html', context)
+    posts = Post.objects.all()
+    context = {'posts': posts}
+    return render(request, 'users/Trabajos.html', context)
