@@ -95,9 +95,7 @@ def post(request):
     else:
         form = PostForm()
     
-    context = {
-        'form': form,
-    }
+    context = {'form': form}
     
     return render(request, 'users/publicar.html', context)
 
