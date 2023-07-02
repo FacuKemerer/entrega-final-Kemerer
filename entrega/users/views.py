@@ -5,8 +5,11 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 
+
+def es_staff(user):
+    return user.is_authenticated and user.is_staff
 
 def login_request(request):
     if request.method == 'POST':
@@ -75,6 +78,7 @@ def mostrar_imagen_post(post):
     url = post.image.url if post.image else None
     return url
 
+@user_passes_test(es_staff)
 def post(request):
     current_user = get_object_or_404(User, pk=request.user.pk)
     
@@ -96,8 +100,6 @@ def post(request):
     }
     
     return render(request, 'users/publicar.html', context)
-
-
 
 def trabajos(request):
     posts = Post.objects.all()

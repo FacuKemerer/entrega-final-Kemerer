@@ -3,10 +3,6 @@ from .forms import cliente_form, auto_form, historia_form, buscar_auto
 from .models import Cliente, Auto, HistorialTrabajos
 from django.contrib.auth.decorators import user_passes_test
 
-
-def es_admin(user):
-    return user.is_authenticated and user.is_superuser
-
 def es_staff(user):
     return user.is_authenticated and user.is_staff
 

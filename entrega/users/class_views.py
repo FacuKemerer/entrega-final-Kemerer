@@ -5,8 +5,11 @@ from django.shortcuts import render
 from django.views.generic import View
 from django.views.generic.edit import DeleteView
 from django.contrib.auth.models import User
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
+class AdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
+    def test_func(self):
+        return self.request.user.is_staff
 
 class BorrarPerfil(LoginRequiredMixin, DeleteView):
     model = User
