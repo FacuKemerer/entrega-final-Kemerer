@@ -8,22 +8,27 @@ Agregar auto
 
 {% block main %}
 
-<a id="scroll"></a>
-<div class="site-heading text-center text-faded d-none d-lg-block">
-    <span class="site-heading-upper texto-form mb-3">Agregar Auto</span>
-    <div class="cuadrado">
-        <form class="formulario" action="" method="POST">
-            {% csrf_token %}
-            <br>
-            <table>
-                <div  class="formulario1">{{ formulario.as_p }}</div>
+<html lang="en">
+    <section class="font-size-clientes page-section cta">
+        <div class="container">
+            <div class="row">
+                <div id="scroll" class="mx-auto">
+                    <div class="cta-inner bg-faded rounded">
+                        <h2 class="section-heading mb-5">
+                            <span class="text-center section-heading-clientes">Agregar Auto</span>
+                        </h2>
+                        <form class="formulario-register text-center" action="" method="POST">
+                            {% csrf_token %}
 
-            </table>
+                            {{ formulario.as_p }}
 
-                <input class="Boton" type = "submit" value="Guardar">
-                <br>
-        </form>
-    </div>
-</div>
+                        <input class="Boton" type = "submit" value="Guardar">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</html>
 
 {% endblock main %}

@@ -21,14 +21,12 @@ from appEntrega import class_views
 
 urlpatterns = [
     path('', views.inicio, name="Inicio"),
-    path('horarios/', views.horarios, name="Horarios"),
+    path('nosotros/', views.nosotros, name="Nosotros"),
     path('form-hist/', views.agregar_historia, name="AgregarHistorial"),
     path('form-cliente/', views.agregar_cliente, name="AgregarCliente"),
     path('form-auto/', views.agregar_auto, name="AgregarAuto"),
     path('busqueda/', views.busqueda_auto, name="Busqueda"),
-    # path('registrarse/', views.sign_up, name="Registrarse"),
-    # path('cerrar-sesion', views.sign_out, name="CerrarSesion"),
-    # path('', views., name=""),
+    path('encontranos/', views.encontranos, name="Encontranos")
 ]
 
 urlpatterns += [
@@ -39,5 +37,5 @@ urlpatterns += [
     path('detalles-autos/<pk>', class_views.DetalleAuto.as_view() , name="DetalleAuto"),
     path('borrar-auto/<pk>', class_views.BorrarAuto.as_view() , name="BorrarAuto"),
     path('borrar-historial/<pk>', class_views.BorrarHistorial.as_view() , name="BorrarHistorial"),
-    # path('', class_views. , name=""),
+    path('editar-historial/<pk>', class_views.EditarHistorial.as_view() , name="EditarHistorial"),
 ]

@@ -41,7 +41,7 @@
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href='{% url "Inicio" %}'>Inicio</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href='{% url "Trabajos" %}'>Trabajos</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href='{% url "Horarios" %}'>Horarios</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href='{% url "Nosotros" %}'>Sobre nosotros</a></li>
                         {% if user.is_staff %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-uppercase px-lg-4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,7 +49,7 @@
                             </a>
                             <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href='{% url "Clientes" %}#scroll'>Clientes</a></li>
-                            <li><a class="dropdown-item" href='{% url "Busqueda" %}#scroll'>Historial</a></li>
+                            <li><a class="dropdown-item" href='{% url "Busqueda" %}#scroll'>Buscar por patente</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href='{% url "AgregarHistorial" %}#scroll'>Agregar Historial</a></li>
                             <li><a class="dropdown-item" href='{% url "AgregarCliente" %}#scroll'>Agregar Cliente</a></li>
@@ -83,8 +83,23 @@
 
 
         <!-- footer -->
-        <footer class="footer text-faded text-center py-5">
-            <div class="container"><p class="m-0 small">Copyright &copy; Your Website 2023</p></div>
+        <footer class="footer text-faded py-5">
+            <div class="container">
+                <div class="footer-content">
+                    <p class="text-center">&copy; 2023 MotorMasters. Todos los derechos reservados.</p>
+                    <nav>
+                        <ul class="list">
+                            <li><a class="black" href='{% url "Inicio" %}'>Inicio</a></li>
+                            <li><a class="black" href='{% url "Nosotros" %}'>Acerca de nosotros</a></li>
+                            <li><a class="black" href='{% url "Trabajos" %}'>Trabajos</a></li>
+                            <li><a class="black" href='{% url "Encontranos" %}'>Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-contact">
+                    <p>Contacto: facukemerer5@gmail.com | Teléfono: +123456789</p>
+                </div>
+            </div>
         </footer>
 
         <!-- Bootstrap core JS-->

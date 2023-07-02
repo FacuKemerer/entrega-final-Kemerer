@@ -15,8 +15,11 @@ def es_staff(user):
 def inicio(request):
     return render(request, "appEntrega/index.html")
 
-def horarios(request):
-    return render(request, "appEntrega/horarios.html")
+def nosotros(request):
+    return render(request, "appEntrega/nosotros.html")
+
+def encontranos(request):
+    return render(request, "appEntrega/encontranos.html")
 
 
 # Formularios

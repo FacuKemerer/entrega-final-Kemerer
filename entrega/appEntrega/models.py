@@ -21,5 +21,5 @@ class HistorialTrabajos(models.Model):
     fecha = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.auto} del {self.fecha}"
+        return f"{self.auto} del {self.fecha}" 
 

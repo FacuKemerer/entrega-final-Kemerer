@@ -1,4 +1,5 @@
-from typing import Any
+from typing import Any, Dict
+from django.http import HttpRequest, HttpResponse
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import UpdateView, DeleteView
@@ -68,3 +69,14 @@ class BorrarHistorial(AdminRequiredMixin, DeleteView):
     success_url = reverse_lazy("Clientes")
     template_name = "appEntrega/classviews/borrar_historial.html"
 
+class EditarHistorial(AdminRequiredMixin, UpdateView):
+    model = HistorialTrabajos
+    success_url = reverse_lazy("Clientes")
+    fields = ['descripcion']
+    template_name = "appEntrega/classviews/editar_historial.html"
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        historial = self.get_object()
+        context['patente'] = historial.auto.patente
+        return context

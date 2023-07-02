@@ -1,10 +1,11 @@
+from .forms import CambiarPasswordForm
+from .models import Post
+from django.urls import reverse_lazy
 from django.shortcuts import render
+from django.views.generic import View
 from django.views.generic.edit import DeleteView
 from django.contrib.auth.models import User
-from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import View
-from .forms import CambiarPasswordForm
 
 
 class BorrarPerfil(LoginRequiredMixin, DeleteView):
@@ -33,3 +34,8 @@ class CambiarPasswordView(LoginRequiredMixin, View):
                 usuario.set_password(pass1)
                 usuario.save()
                 return render(request, "appEntrega/index.html")
+
+class BorrarPost(DeleteView):
+    model =  Post
+    success_url = reverse_lazy("Trabajos")
+    template_name = "users/borrar_post.html"

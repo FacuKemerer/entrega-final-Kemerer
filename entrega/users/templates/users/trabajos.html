@@ -15,7 +15,7 @@ Trabajos
                 <div class="product-item-title">
                     {% if user.is_staff %}
                     <div class="boton-container">
-                    <a class="post-boton" href="{% url 'Publicar' %}#scroll">Nueva publicacion</a>
+                    <a class="post-boton" href="{% url 'Publicar' %}#scroll">Nueva publicación</a>
                     </div>
                     {% endif %}
                     {% for post in posts %}
@@ -29,6 +29,9 @@ Trabajos
                         </p>
                         <h2 class="post-user">{{ post.user.username }}</h2>
                         <br>
+                        <div class="boton-container">
+                            <a class="borrar-boton" href="{% url 'BorrarPost' post.id %}#scroll">Borrar publicación</a>
+                        </div>
                     </div>
                     {% endfor %}
                 </div>

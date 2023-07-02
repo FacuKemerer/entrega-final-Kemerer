@@ -16,6 +16,7 @@ urlpatterns = [
     path('cambiar-contraseña/', class_views.CambiarPasswordView.as_view(), name='EditarContraseña'),
     path('trabajos/', views.trabajos, name='Trabajos'),
     path('publicar/', views.post, name='Publicar'),
+    path('borrar-post/<pk>', class_views.BorrarPost.as_view(), name="BorrarPost"),
 
 ]
 

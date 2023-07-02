@@ -588,6 +588,14 @@ progress {
   margin-bottom: 0;
 }
 
+ul.list{
+  list-style-type: none
+}
+
+a.black:hover{
+  color: black;
+}
+
 .blockquote-footer {
   margin-top: -1rem;
   margin-bottom: 1rem;
@@ -11053,7 +11061,7 @@ p {
   box-shadow: #0dcaf0;
   border-style: none;
   color:#000;
-  border-radius: 8px
+  border-radius: 8px;
 }
 
 .cuadrado{
@@ -11248,10 +11256,12 @@ p {
 }
 
 .post-contenido{
+  font-family: "Raleway";
   max-width: 100%;
   height: auto;
   font-size: 20px;
   text-align: justify;
+  color: black;
 }
 
 .post-fecha{
@@ -11286,4 +11296,81 @@ p {
   border-radius: 4px;
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+.borrar-boton{
+  font-family: "Raleway";
+  display: inline-block;
+  padding: 5px 10px;
+  text-decoration: none;
+  background-color: #eaeaea;
+  color: #333;
+  border: 1px solid #7a7a7a;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.linea-confirmacion{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  padding-bottom: 0.25rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+/* Pagina Contacto */
+
+.contenedor-texto{
+  float: left;
+  width: 40%;
+}
+
+.mapa{
+  float: right;
+  width: 50%;
+}
+
+.mapa iframe{
+  width: 100%;
+  height: 100%;
+}
+
+.bg-contacto{
+  background-color: #8a8a8a;
+}
+
+.contenedor{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.botones{
+  font-family: "Raleway";
+  margin-top: 20px;
+  text-align: center;
+
+}
+
+.boton-wa {
+  display: block;
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  background-color: #f2f2f2;
+  color: #333;
+  text-decoration: none;
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.boton-gmail{
+  display: block;
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  background-color: #f2f2f2;
+  color: #333;
+  text-decoration: none;
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
 }

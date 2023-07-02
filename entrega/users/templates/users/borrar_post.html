@@ -1,0 +1,34 @@
+{% extends 'appEntrega/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Confirmacion
+{% endblock titulo %}
+
+{% block main %}
+
+
+<html lang="en">
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item-title">
+                    <div class="margen-post text-center bg-faded p-5">
+                        <form id="scroll" method="post">{% csrf_token %}
+                            <ul class="list-unstyled list-hours mx-auto">
+                                <li class="linea-confirmacion mb-0"></li>
+                                <pr class="text-upper">¿Seguro que quieres borrar el post con titulo "{{ object.title }}"?</pr>
+                                <br>
+                                <input class="Boton" type="submit" value="Borrar"/>
+                                <li class="linea-confirmacion"></li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
+
+
+{% endblock main %}

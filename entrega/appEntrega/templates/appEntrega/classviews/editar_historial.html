@@ -1,0 +1,39 @@
+{% extends 'appEntrega/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Cliente
+{% endblock titulo %}
+
+{% block main %}
+
+<html lang="en">
+
+<section id="scroll" class="font-size-clientes page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="mx-auto">
+                <div class="cta-inner bg-faded rounded">
+                    <h2 class="section-heading mb-5">
+                        <span class="text-center section-heading-clientes">Editar historial</span>
+                    </h2>
+                    <ul class="list-unstyled lista mb-5 text-left mx-auto">
+                        <li class="list-unstyled-item d-flex">
+                            <form class="formulario-register text-center" method="POST">
+                            <p>Patente {{ patente }}</p>
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <input class="Boton" type = "submit" value="Guardar">
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</html>
+
+{% endblock main %}

@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block titulo %}
-Cliente {{ cliente.apellido }}
+Cliente {{ object.cliente }}
 {% endblock titulo %}
 
 {% block main %}
@@ -16,7 +16,7 @@ Cliente {{ cliente.apellido }}
             <div class="mx-auto">
                 <div class="cta-inner bg-faded rounded">
                     <h2 class="section-heading mb-5">
-                    <span class="section-heading-clientes">{{ cliente.nombre }} {{ cliente.apellido }}</span>
+                    <span class="section-heading-clientes">{{ object.cliente }}</span>
                     </h2>
                     <ul class="list-unstyled lista mb-5 text-left mx-auto">
                         <li class="list-unstyled-item detalles-item d-flex">
@@ -32,7 +32,8 @@ Cliente {{ cliente.apellido }}
                                 {{ historial.descripcion }}
                                 <br>
                                 {{ historial.fecha }}
-                                <a class="ms-boton1 ms-botones font-botones" href="{% url 'BorrarHistorial' historial.id %}#scroll">Borrar</a>
+                                <a class="ms-botones font-botones" href="{% url 'EditarHistorial' historial.id %}#scroll">Editar</a>
+                                <a class="ms-botones font-botones" href="{% url 'BorrarHistorial' historial.id %}#scroll">Borrar</a>
                             </li>
                             {% endfor %}
                         {% else %}

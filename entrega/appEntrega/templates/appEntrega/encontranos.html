@@ -1,0 +1,44 @@
+{% extends 'appEntrega/base.html' %}
+
+{% load static %}
+{% load custom_filters %}
+
+{% block titulo %}
+Trabajos
+{% endblock titulo %}
+
+{% block main %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    </head>
+    <body>
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item-title">
+                    <div class="bg-contacto contenedor p-5">
+                        <h2 class="section-heading-clientes">CONTACTO</h2>
+                        <div class="contenedor-texto">
+                        <p class="post-contenido">Podés contactarnos por cualquiera de los siguientes canales. No es necesario que lo hagas en varios de ellos a la vez, con que nos escribas por uno solo es suficiente ya que nuestra atención es centralizada sin importar el medio: </p>
+                        <div class="botones">
+                            <a href="https://wa.me/Entrega" target="_blank" class="boton-wa">
+                                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                            </a>
+                            <a href="mailto:facukemerer5@gmail.com" target="_blank" class="boton-gmail">
+                                <i class="far fa-envelope"></i> Enviar correo
+                            </a>
+                        </div>
+                        </div>
+                        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2455.1840009390507!2d-1.1491650240961941!3d52.02174557193483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48771fe47b4884ab%3A0xf5b4eec707fc929a!2sMercedes-AMG%20Formula%20One%20Team!5e0!3m2!1ses!2sar!4v1688255098688!5m2!1ses!2sar" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
+
+
+{% endblock main %}

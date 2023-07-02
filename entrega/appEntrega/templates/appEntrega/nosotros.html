@@ -1,0 +1,41 @@
+{% extends 'appEntrega/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Nosotros
+{% endblock titulo %}
+
+{% block main %}
+
+<html lang="en">
+    <head>
+        <section id="scroll" class="font-size-clientes page-section cta">
+            <div class="container">
+                <div class="row">
+                    <div class="mx-auto">
+                        <div class="cta-inner bg-faded rounded">
+                            <h2 class="section-heading mb-5">
+                                <span class="section-heading-clientes">NOSOTROS</span>
+                            </h2>
+                            <p class="post-contenido">
+                            Bienvenidos a nuestro taller mecánico. Somos un equipo de expertos en automóviles apasionados por brindar servicios de alta calidad. Desde cambios de aceite hasta reparaciones mecánicas y mantenimiento preventivo, estamos aquí para cuidar de tu vehículo.
+                            <br><br>
+                            Nuestro equipo de mecánicos altamente capacitados se compromete a brindarte un servicio honesto y transparente. Utilizamos herramientas de vanguardia y repuestos de calidad para garantizar un rendimiento óptimo y seguro de tu automóvil.
+                            <br><br>
+                            En nuestro taller, te ofrecemos un ambiente acogedor y amigable. Queremos ganarnos tu confianza y convertirnos en tu taller de confianza a largo plazo.
+                            <br><br>
+                            Además, queremos presentarte a nuestro fundador, Kemerer Facundo. Él es el responsable de la creación de esta página web y está comprometido en brindarte una experiencia en línea intuitiva y fácil de usar.
+                            <br><br>
+                            Gracias por visitar nuestro sitio web y considerar nuestros servicios. Si tienes alguna pregunta o necesitas programar una cita, no dudes en contactarnos. ¡Esperamos poder atenderte pronto!</p> <br><br>
+
+                            <p class="text-center"><a class="post-contenido" href='{% url "Encontranos" %}'>Contacto</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
+
+{% endblock main %}
