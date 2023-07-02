@@ -35,6 +35,3 @@ Para ver la vista del mecánico con su respectivo usuario, utiliza las siguiente
 
 Para ver cómo lo ve el resto de los usuarios, simplemente crea una cuenta nueva.
 
-¡Gracias por visitar este repositorio! Si tienes alguna pregunta o sugerencia, no dudes en contactarme.
-
-

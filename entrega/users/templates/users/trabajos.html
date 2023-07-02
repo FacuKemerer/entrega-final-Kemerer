@@ -29,9 +29,11 @@ Trabajos
                         </p>
                         <h2 class="post-user">{{ post.user.username }}</h2>
                         <br>
+                        {% if user.is_staff %}
                         <div class="boton-container">
                             <a class="borrar-boton" href="{% url 'BorrarPost' post.id %}#scroll">Borrar publicación</a>
                         </div>
+                        {% endif %}
                     </div>
                     {% endfor %}
                 </div>

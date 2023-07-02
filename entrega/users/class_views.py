@@ -38,7 +38,7 @@ class CambiarPasswordView(LoginRequiredMixin, View):
                 usuario.save()
                 return render(request, "appEntrega/index.html")
 
-class BorrarPost(DeleteView):
+class BorrarPost(LoginRequiredMixin, DeleteView):
     model =  Post
     success_url = reverse_lazy("Trabajos")
     template_name = "users/borrar_post.html"
